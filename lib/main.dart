@@ -9,9 +9,13 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: MyHome(),
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.teal),
+        useMaterial3: true,
+      ),
+      home: const MyHome(),
     );
   }
 }
@@ -23,7 +27,8 @@ class MyHome extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.blueGrey,
+        backgroundColor: Colors.teal,
+        foregroundColor: Colors.white,
         title: const Text('Judul Halaman'),
       ),
       drawer: const MyDrawer(),
@@ -31,7 +36,7 @@ class MyHome extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: const [
-            Icon(Icons.home_rounded, size: 80, color: Colors.blueGrey),
+            Icon(Icons.home_rounded, size: 80, color: Colors.teal),
             SizedBox(height: 16),
             Text(
               'Selamat datang di aplikasi ku',
@@ -54,7 +59,7 @@ class MyDrawer extends StatelessWidget {
         padding: EdgeInsets.zero,
         children: [
           const DrawerHeader(
-            decoration: BoxDecoration(color: Colors.blueGrey),
+            decoration: BoxDecoration(color: Colors.teal),
             child: Text(
               'Menu Navigasi',
               style: TextStyle(color: Colors.white, fontSize: 24),
